@@ -2,6 +2,8 @@
   --sidenav-width: 4rem;
 
   font-size: 20px;
+  /*interpolate-size: allow-keywords;*/
+
 }
 
 * {
@@ -136,6 +138,25 @@ details {
   border: 1px solid black;
 }
 
-details:open {
-  background-color: red;
+details *:not(summary) {
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+details::details-content {
+  interpolate-size: allow-keywords; /*### NOTE: this property isn't supported on Safari and Firefox.*/
+  transition: block-size 600ms, content-visibility 600ms;
+  transition-behavior: allow-discrete;
+  block-size: 0;
+  overflow: hidden;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+summary::marker {
+  content: "";
 }
