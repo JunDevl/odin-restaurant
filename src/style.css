@@ -24,6 +24,7 @@ button {
 nav#side-nav {
   min-width: var(--sidenav-width);
   position: relative;
+  background-color: azure;
 }
 
 nav#side-nav ul {
@@ -39,6 +40,8 @@ nav#side-nav ul {
   align-items: stretch;
   justify-content: flex-start;
   gap: 1rem;
+  transition: width 400ms;
+  background-color: inherit;
 }
 
 nav#side-nav ul li {
@@ -122,6 +125,13 @@ main {
 
 #hero p, #hero em {
   font-size: 1.2rem;
+}
+
+#hero .button-group {
+  display: flex;
+  gap: 1rem;
+  justify-self: end;
+  margin-top: 3rem;
 }
 
 .check-menu {
