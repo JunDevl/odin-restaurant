@@ -1,4 +1,28 @@
 :root {
+  --primary-hue: 0;
+  --secondary-hue: 27;
+  --accent-hue: 216;
+
+  --white-1: hsl(var(--primary-hue), 4%, 98%);
+  --white-2: hsl(var(--primary-hue), 4%, 96%);
+  --white-3: hsl(var(--primary-hue), 4%, 94%);
+  
+  --black-1: hsl(var(--primary-hue), 4%, 5%);
+  --black-2: hsl(var(--primary-hue), 4%, 9%);
+  --black-3: hsl(var(--primary-hue), 4%, 13%);
+
+  --primary-color: hsl(var(--primary-hue) 100%, 37%);
+  --primary-color-hover: hsl(calc(var(--primary-hue) + 20), 100%, 45%);
+  --primary-color-active: hsl(calc(var(--primary-hue) + 15), 100%, 30%);
+
+  --secondary-color: hsl(var(--secondary-hue), 100%, 50%);
+  --secondary-color-hover: hsl(calc(var(--secondary-hue) + 20), 100%, 60%);
+  --secondary-color-active: hsl(calc(var(--secondary-hue) + 15), 100%, 40%);
+
+  --accent-color: hsl(var(--accent-hue), 100%, 42%);
+  --accent-color-hover: hsl(calc(var(--accent-hue) + 15), 100%, 52%);
+  --accent-color-active: hsl(calc(var(--accent-hue) + 7), 100%, 32%);
+
   --sidenav-width: 4rem;
 
   font-size: 20px;
@@ -15,16 +39,23 @@ body {
   padding: 0;
   display: flex;
   justify-content: stretch;
+  align-items: stretch;
+  background-color: var(--black-1);
 }
 
 button {
   border: none;
 }
 
+span {
+  margin: 0;
+  padding: 0;
+}
+
 nav#side-nav {
   min-width: var(--sidenav-width);
   position: relative;
-  background-color: azure;
+  background-color: var(--white-3);
 }
 
 nav#side-nav ul {
@@ -33,7 +64,7 @@ nav#side-nav ul {
   left: 0;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 100%;
   width: var(--sidenav-width);
   display: flex;
   flex-direction: column;
@@ -55,14 +86,16 @@ nav#side-nav ul li {
 }
 
 main {
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 #page-header nav {
+  height: 7rem;
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
   gap: 3rem;
+  background-color: var(--white-1);
 }
 
 #page-header nav button {
@@ -70,16 +103,25 @@ main {
   padding: 1.5rem;
 }
 
-.buttons {
+.header-buttons {
   flex: 1;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
 }
 
-.buttons * {
+.header-buttons button {
   flex: 1;
   width: min-content;
+  background-color: inherit;
+}
+
+.header-buttons button:hover {
+  background-color: var(--white-2);
+}
+
+.header-buttons button:active {
+  background-color: var(--white-3);
 }
 
 .search {
@@ -109,22 +151,30 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 22rem;
+  height: 20%;
+  background: url("../assets/hero-burger.jpg"); /*Picture from <a href="https://unsplash.com/pt-br/@robinstickel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Robin Stickel</a>na <a href="https://unsplash.com/pt-br/fotografias/fotografia-de-foco-seletivo-de-hamburguer-maionese-e-batatas-fritas-servidas-na-travessa-tzl1UCXg5Es?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>*/
+  background-size: 100%;
 }
 
 #hero h1 {
-  font-size: 1.75rem;
+  font-size: 3rem;
   margin: 0;
   margin-bottom: 1.4rem;
+  text-shadow: -1px -1px 0 var(--white-3), 1px -1px 0 var(--white-3), -1px 1px 0 var(--white-3), 1px 1px 0 var(--white-3);
 }
 
 #hero p {
   margin: 0;
   margin-bottom: 2rem;
+  text-shadow: -1px -1px 0 var(--white-3), 1px -1px 0 var(--white-3), -1px 1px 0 var(--white-3), 1px 1px 0 var(--white-3);
+}
+
+#hero p #should {
+  text-decoration: underline;
 }
 
 #hero p, #hero em {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 #hero .button-group {
@@ -135,24 +185,44 @@ main {
 }
 
 .check-menu {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
   border-radius: 7px;
+  color: var(--white-1);
+  border: 4px var(--accent-color) solid;
+  font-weight: bolder;
+  background-color: var(--accent-color);
+}
+
+.check-menu:hover {
+  color: var(--accent-color);
+  background-color: transparent;
 }
 
 .content {
   padding: 2rem;
+  background-color: var(--white-2);
+}
+
+.content h1 {
+  font-size: 1.25rem;
+  margin-bottom: 1.3rem;
+}
+
+.menu-category {
+  margin-bottom: 3rem;
+  padding-left: 0.75rem;
 }
 
 details {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
 }
 
 details *:not(summary) {
-  margin: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
+  text-align: center;
 }
 
 details::details-content {
@@ -167,6 +237,23 @@ details[open]::details-content {
   block-size: auto;
 }
 
-summary::marker {
+details summary {
+  display: flex;
+  align-items: center;
+}
+
+details summary span {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  flex: 0;
+  transition: 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+details[open] summary span {
+  flex: 1;
+  padding-top: 2.5rem;
+}
+
+details summary::marker {
   content: "";
 }

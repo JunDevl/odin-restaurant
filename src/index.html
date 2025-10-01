@@ -20,7 +20,7 @@
   <main>
     <header id="page-header">
       <nav>
-        <div class="buttons">
+        <div class="header-buttons">
           <button class="home">Home</button>
           <button class="menu">Menu</button>
           <button class="about">About</button>
@@ -40,7 +40,7 @@
     </header>
     <div id="hero">
       <h1>Have you even tasted it?</h1>
-      <p>If not, you <em>should</em> prepare yourself for what's about to come.</p>
+      <p>If not, you <em id="should">should</em> prepare yourself for what's to come.</p>
       <button class="check-menu">Check out our menu &DoubleDownArrow;</button>
       <div class="button-group">
         <button class="intro">Introduction</button>
@@ -50,51 +50,66 @@
 
     <div class="content">
       <h1>Dishes</h1>
-
       <div class="menu-category dishes">
-        <details name="dishes" id="a-la-minute">
-          <summary>A La Minute</summary>
-          <p>A La Minute</p>
-        </details>
-
-        <details name="dishes" id="lasagna">
-          <summary>Lasagna</summary>
-          <p>Lasagna</p>
-        </details>
-
         <details name="dishes" id="hamburger">
-          <summary>Hamburger</summary>
-          <p>Hamburger</p>
+          <summary><span>Hamburger</span></summary>
+          <p><span>Hamburger</span></p>
         </details>
 
         <details name="dishes" id="pizza">
-          <summary>Pizza</summary>
-          <p>Pizza</p>
+          <summary><span>Pizza</span></summary>
+          <p><span>Pizza</span></p>
         </details>
 
+        <details name="dishes" id="fries">
+          <summary><span>Fries</span></summary>
+          <p><span>Fries</span></p>
+        </details>
+
+        <details name="dishes" id="a-la-minute">
+          <summary><span>A La Minute</span></summary>
+          <p><span>A La Minute</span></p>
+        </details>
+
+        <details name="dishes" id="lasagna">
+          <summary><span>Lasagna</span></summary>
+          <p><span>Lasagna</span></p>
+        </details>
       </div>
 
-
       <h1>Beverages</h1>
-
       <div class="menu-category beverages">
-        <details name="beverages" id="coke">
-          <summary>Coca-Cola</summary>
-          <p>Coca-Cola</p>
+        <details name="beverages" id="whiskey">
+          <summary><span>Whiskey</span></summary>
+          <p><span>Whiskey</span></p>
         </details>
 
-        <details name="beverages" id="whiskey">
-          <summary>
-            Whiskey
-          </summary>
-          <p>Whiskey</p>
+        <details name="beverages" id="champagne">
+          <summary><span>Champagne</span></summary>
+          <p><span>Champagne</span></p>
+        </details>
+
+        <details name="beverages" id="wine">
+          <summary><span>Wine</span></summary>
+          <p><span>Wine</span></p>
         </details>
 
         <details name="beverages" id="beer">
-          <summary>
-            Beer
-          </summary>
-          <p>Beer</p>
+          <summary><span>Beer</span></summary>
+          <p><span>Beer</span></p>
+        </details>
+      </div>
+
+      <h1>Sodas</h1>
+      <div class="menu-category sodas">
+        <details name="soda" id="coca-cola">
+          <summary><span>Coca-Cola</span></summary>
+          <p><span>Coca-Cola</span></p>
+        </details>
+
+        <details name="soda" id="fanta">
+          <summary><span>Fanta</span></summary>
+          <p><span>Fanta</span></p>
         </details>
       </div>
     </div>
